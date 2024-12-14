@@ -1,0 +1,44 @@
+body{
+    text-align: center;
+    color: rgb(96, 36, 200);
+    font-size: 20px;
+
+}
+#table{
+    width: 120px;
+    height: 100px;
+    margin: 10px;
+    border: solid black 2px;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+#table:hover{
+    cursor: pointer;
+    background-color: gray;
+    transition: background-color 0.3s ease;
+}
+#Date{
+    font: 25px;
+    border-radius: 5px;
+    border: 2px solid black;
+    color: black;
+}
+#time{
+        font: 25px;
+        border-radius: 5px;
+        border: 2px solid black;
+        color: black;
+    
+}
+label>p,p{
+    font-size: 30px;
+    color: #333333;
+    font-weight: bold;
+}
+#Date:hover{
+    cursor: pointer;
+    background-color: gray;
+    transition: background-color 0.3s ease;
+}
