@@ -1,14 +1,9 @@
-
-
-function Header(){
-    return(
-        <header>
-           <p> <h1>EasyDine</h1>   </p> 
-           
-        </header>
-    
-    
-    );
+function Header() {
+  return (
+    <header>
+      <h1>EasyDine</h1>
+    </header>
+  );
 }
 
-export default Header
+export default Header;
