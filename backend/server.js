@@ -64,6 +64,42 @@ app.post("/login", (req, res) => {
   });
 });
 
+app.post("/reserve", (req, res) => {
+  const sql =
+    "INSERT INTO reservations (`name`, `surname`, `email`, `phone_number`, `number_of_people`, `preorder`) VALUES (?)";
+  const values = [
+    req.body.name,
+    req.body.surname,
+    req.body.email,
+    req.body.phoneNumber,
+    req.body.numOfPeople,
+    req.body.preorder,
+  ];
+  db.query(sql, [values], (err, result) => {
+    if (err) {
+      console.error("SQL Query Error:", err.message);
+      console.error("SQL Query:", sql);
+      console.error("Values:", values);
+      return res.status(500).json({ error: "Database error" });
+    }
+    return res
+      .status(201)
+      .json({ message: "User created successfully", result });
+  });
+});
+
+app.get("/reservations", (req, res) => {
+  const sql = `SELECT * FROM reservations WHERE email = '${"b@a.c"}'`;
+  db.query(sql, (err, result) => {
+    if (err) {
+      console.error("SQL Query Error:", err.message);
+      console.error("SQL Query:", sql);
+      return res.status(500).json({ error: "Database error" });
+    }
+    return res.status(200).json({ message: "Reservations", result });
+  });
+});
+
 app.listen(8081, () => {
   console.log("listeing");
 });
