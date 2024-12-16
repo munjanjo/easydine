@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
-import '../styles/button.css'
+import "../styles/button.css";
 
-
-function Button(){
-    return(
-        <Link to="/book">
-                <button className="button">Book a table!</button>
-        </Link>
-        
-    );
+function Button() {
+  return (
+    <Link to="/form">
+      <button className="button">Book a table!</button>
+    </Link>
+  );
 }
-export default Button
+export default Button;

@@ -29,6 +29,7 @@ export default function LoginPage() {
 
         if (res.data.Status === "Success") {
           console.log("Login successful, navigating to /home...");
+          localStorage.setItem("activeEmail", res.data.email);
           setSuccessMessage("Logged in successfully!"); // Set success message
           setTimeout(() => {
             navigate("/home"); // Navigate after a short delay

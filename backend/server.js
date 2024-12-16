@@ -29,7 +29,11 @@ app.post("/signup", (req, res) => {
       }
       return res
         .status(201)
-        .json({ message: "User created successfully", result });
+        .json({
+          message: "User created successfully",
+          result,
+          email: req.body.email,
+        });
     });
   });
 });
@@ -55,7 +59,9 @@ app.post("/login", (req, res) => {
           return res.status(500).json({ Error: "Internal server error" });
         }
         if (response) {
-          return res.status(200).json({ Status: "Success" });
+          return res
+            .status(200)
+            .json({ Status: "Success", email: req.body.email });
         } else {
           return res.status(401).json({ Error: "Wrong password" });
         }
@@ -66,7 +72,7 @@ app.post("/login", (req, res) => {
 
 app.post("/reserve", (req, res) => {
   const sql =
-    "INSERT INTO reservations (`name`, `surname`, `email`, `phone_number`, `number_of_people`, `preorder`) VALUES (?)";
+    "INSERT INTO reservations (`name`, `surname`, `email`, `phone_number`, `number_of_people`, `preorder`, `date`, `table`) VALUES (?)";
   const values = [
     req.body.name,
     req.body.surname,
@@ -74,6 +80,8 @@ app.post("/reserve", (req, res) => {
     req.body.phoneNumber,
     req.body.numOfPeople,
     req.body.preorder,
+    `${req.body.date} ${req.body.time}`,
+    req.body.table,
   ];
   db.query(sql, [values], (err, result) => {
     if (err) {
@@ -89,11 +97,16 @@ app.post("/reserve", (req, res) => {
 });
 
 app.get("/reservations", (req, res) => {
-  const sql = `SELECT * FROM reservations WHERE email = '${"b@a.c"}'`;
-  db.query(sql, (err, result) => {
+  const userEmail = req.query.email; // Dohvat emaila iz query stringa
+
+  if (!userEmail) {
+    return res.status(400).json({ error: "Email parameter is required" });
+  }
+
+  const sql = "SELECT * FROM reservations WHERE email = ?";
+  db.query(sql, [userEmail], (err, result) => {
     if (err) {
       console.error("SQL Query Error:", err.message);
-      console.error("SQL Query:", sql);
       return res.status(500).json({ error: "Database error" });
     }
     return res.status(200).json({ message: "Reservations", result });
@@ -101,5 +114,5 @@ app.get("/reservations", (req, res) => {
 });
 
 app.listen(8081, () => {
-  console.log("listeing");
+  console.log("listening");
 });
