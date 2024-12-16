@@ -7,10 +7,11 @@ export default function ReservationsPage() {
   const [reservations, setReservations] = useState([]);
 
   useEffect(() => {
+    const userEmail = localStorage.getItem("activeEmail"); // Ovo bi dolazilo iz korisničkog profila
+    console.log(userEmail);
     axios
-      .get("http://localhost:8081/reservations")
+      .get(`http://localhost:8081/reservations?email=${userEmail}`)
       .then((res) => {
-        console.log(res.data);
         setReservations(res.data.result);
       })
       .catch((err) => console.log(err));
@@ -21,7 +22,7 @@ export default function ReservationsPage() {
       <div className="forma">
         {reservations.map((res) => (
           <div>
-            {res.name} {res.surname}
+            {res.name} {res.surname} {res.date}
           </div>
         ))}
       </div>

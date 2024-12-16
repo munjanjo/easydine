@@ -17,6 +17,7 @@ export default function SignUpPage() {
     axios
       .post("http://localhost:8081/signup", { name, email, password })
       .then((res) => {
+        localStorage.setItem("activeEmail", res.data.email);
         navigate("/home");
       })
       .catch((err) => console.log(err));
