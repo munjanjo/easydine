@@ -27,13 +27,11 @@ app.post("/signup", (req, res) => {
         console.error("Values:", values);
         return res.status(500).json({ error: "Database error" });
       }
-      return res
-        .status(201)
-        .json({
-          message: "User created successfully",
-          result,
-          email: req.body.email,
-        });
+      return res.status(201).json({
+        message: "User created successfully",
+        result,
+        email: req.body.email,
+      });
     });
   });
 });

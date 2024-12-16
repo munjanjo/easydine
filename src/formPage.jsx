@@ -1,7 +1,7 @@
 import "../styles/formPage.css";
 import { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function FormPage() {
   const [step, setStep] = useState(1);
@@ -16,13 +16,13 @@ export default function FormPage() {
     numOfPeople: "",
     preorder: "",
   });
-
+  const navigate = useNavigate();
   function submit(event) {
     event.preventDefault();
     axios
       .post("http://localhost:8081/reserve", values)
       .then((res) => {
-        navigate("/home");
+        navigate("/reservations");
       })
       .catch((err) => console.log(err));
   }
