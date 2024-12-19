@@ -1,11 +1,12 @@
 import { BrowserRouter, Form, Route, Routes } from "react-router-dom";
 import Home from "./Home";
-import Book from "./bookPage";
 import FormPage from "./formPage";
 import MenuPage from "./menuPage";
 import LoginPage from "./Login";
 import SignUpPage from "./signUp";
 import ReservationsPage from "./reservationsPage";
+import Contact from "./contact";
+import About from "./about";
 
 function App() {
   return (
@@ -17,10 +18,11 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/home" element={<Home />} />
-          {/* <Route path="/book" element={<Book />} /> */}
           <Route path="/form" element={<FormPage />} />
           <Route path="/reservations" element={<ReservationsPage />} />
           <Route path="/menu" element={<MenuPage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </>

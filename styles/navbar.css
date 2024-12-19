@@ -1,0 +1,51 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5); /* Transparentna pozadina */
+  backdrop-filter: blur(10px); /* Zamagljivanje */
+  -webkit-backdrop-filter: blur(10px); /* Podrška za Webkit preglednike */
+  border-bottom: 1px solid rgba(200, 200, 200, 0.5); /* Blago istaknuta donja granica */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Blaga sjena */
+  box-sizing: border-box;
+  border-radius: 5px; /* Lagano zaobljeni uglovi */
+  padding: 8px 10px; /* Unutarnji razmak */
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2d2c2c; /* Tamna boja loga */
+}
+
+.navbar-links {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-link {
+  text-decoration: none;
+  font-size: 16px;
+  color: black; /* Boja teksta linkova */
+  padding: 10px 15px;
+  border-radius: 5px; /* Zaobljeni uglovi za hover efekt */
+  transition: all 0.3s ease; /* Glatka tranzicija */
+}
+
+.navbar-link:hover {
+  cursor: pointer;
+  background-color: #f0f0f0; /* Boja pozadine prilikom hovera */
+  color: #000000; /* Crna boja teksta */
+  text-decoration:underline;
+}
+
+.navbar-link:active {
+  background-color: #e0e0e0; /* Blago tamnija pozadina */
+  transform: scale(0.95); /* Efekt pritiska */
+}

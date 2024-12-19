@@ -1,5 +1,0 @@
-.menubutton:hover{
-    cursor: pointer;
-    background-color: gray;
-    transition: background-color 0.3s ease;
-}

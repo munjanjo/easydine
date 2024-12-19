@@ -1,0 +1,30 @@
+.image {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  display: block;
+  height: 250px;
+  transition: transform 0.3s ease-in-out;
+}
+p{
+  font-family:'Times New Roman', Times, serif;
+}
+.image:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin: 90px 0;
+ 
+
+}

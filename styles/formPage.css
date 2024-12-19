@@ -1,4 +1,4 @@
-/* Ensure the entire viewport height and apply flex to center content */
+
 body, html {
     height: 100%;
     display: flex;
@@ -27,6 +27,13 @@ body, html {
 h1 {
     text-align: center;
     color: #333333;
+}
+label p,p{
+    font-size: 25px;
+    font-style: solid;
+        text-align: center;
+        color: #333333;
+    
 }
 
 label {
@@ -60,4 +67,19 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #0056b3;
+}
+#table{
+    font-size: 15px;
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    box-shadow: none;
+    margin: 5px;
+    background-color: white;
+    border: 1px solid black;
+}
+#table:hover{
+    cursor: pointer;
+    background-color: gray;
+    transition: background-color 0.3s ease-in-out;
 }

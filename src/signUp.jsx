@@ -18,7 +18,8 @@ export default function SignUpPage() {
       .post("http://localhost:8081/signup", { name, email, password })
       .then((res) => {
         localStorage.setItem("activeEmail", res.data.email);
-        navigate("/home");
+        setSuccessMessage("Signed up successfully!");
+        navigate("/login");
       })
       .catch((err) => console.log(err));
   }
