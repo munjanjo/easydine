@@ -1,7 +1,6 @@
-import { Link, NavLink } from "react-router-dom";
+import "../styles/Login.css";
 import email_icon from "./assets/email.png";
 import password_icon from "./assets/password.png";
-import "../styles/login.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
@@ -63,7 +62,7 @@ export default function LoginPage() {
 
   return (
     <>
-      <div className="container">
+      <div className="LoginContainer">
         <div className="header">
           <div className="text">Login</div>
         </div>

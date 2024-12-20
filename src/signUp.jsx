@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import user_icon from "./assets/person.png";
 import email_icon from "./assets/email.png";
 import password_icon from "./assets/password.png";
-import "../styles/login.css";
+import "../styles/Login.css";
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -26,7 +26,7 @@ export default function SignUpPage() {
 
   return (
     <>
-      <div className="container">
+      <div className="LoginContainer">
         <form className="sign-up-form" onSubmit={register}>
           <div className="header">
             <div className="text">Sign up</div>

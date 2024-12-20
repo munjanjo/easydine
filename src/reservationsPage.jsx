@@ -32,8 +32,8 @@ export default function ReservationsPage() {
   return (
     <>
       <Navbar />
-      <div className="container">
-        <h1>Your Reservations</h1>
+      <div className="ReservationsContainer">
+        <h1 id="h1">Your Reservations</h1>
         <div className="reservation-list">
           {reservations.map((res, index) => (
             <div className="reservation-card" key={index}>

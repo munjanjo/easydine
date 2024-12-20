@@ -1,4 +1,4 @@
-import "../styles/formPage.css";
+import "../styles/FormPage.css";
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
@@ -28,7 +28,7 @@ export default function FormPage() {
   }
 
   return (
-    <>
+    <div className="form-container">
       {step === 1 ? (
         <>
           <label>
@@ -214,6 +214,6 @@ export default function FormPage() {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 }

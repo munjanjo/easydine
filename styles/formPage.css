@@ -1,85 +1,85 @@
-
-body, html {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    font-family: Arial, sans-serif;
+.form-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 .forma {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
 }
-.forma input{
-    border: 2px solid black;
+.forma input {
+  border: 2px solid black;
 }
-.forma input:hover{
-    background-color: rgb(197, 193, 193);
-    transition: 0.3s ease;
-
+.forma input:hover {
+  background-color: rgb(197, 193, 193);
+  transition: 0.3s ease;
 }
 
 h1 {
-    text-align: center;
-    color: #333333;
+  text-align: center;
+  color: #333333;
 }
-label p,p{
-    font-size: 25px;
-    font-style: solid;
-        text-align: center;
-        color: #333333;
-    
+label p,
+p {
+  font-size: 25px;
+  font-style: solid;
+  text-align: center;
+  color: #333333;
 }
 
 label {
-    display: block;
-    margin-bottom: 1rem;
-    color: #555;
-    font-size: 1rem;
+  display: block;
+  margin-bottom: 1rem;
+  color: #555;
+  font-size: 1rem;
 }
 
-label input, label textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    border: 2px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    
+label input,
+label textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
 input[type="submit"] {
-    width: 25%;
-    padding: 0.75rem;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 25%;
+  padding: 0.75rem;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
-#table{
-    font-size: 15px;
-    width: 120px;
-    height: 120px;
-    border-radius: 5px;
-    box-shadow: none;
-    margin: 5px;
-    background-color: white;
-    border: 1px solid black;
+#table {
+  font-size: 15px;
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+  box-shadow: none;
+  margin: 5px;
+  background-color: white;
+  border: 1px solid black;
 }
-#table:hover{
-    cursor: pointer;
-    background-color: gray;
-    transition: background-color 0.3s ease-in-out;
+#table:hover {
+  cursor: pointer;
+  background-color: gray;
+  transition: background-color 0.3s ease-in-out;
 }

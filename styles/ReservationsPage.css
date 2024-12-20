@@ -1,66 +1,65 @@
 /* Main Container */
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    color: #333;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #444;
-    
-  }
-  
-  /* Reservation List */
-  .reservation-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  /* Reservation Card */
-  .reservation-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .reservation-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  }
-  
-  .reservation-card p {
-    margin: 5px 0;
-  }
-  
-  .reservation-card strong {
-    color: #555;
-  }
-  
-  /* Date and Time Section */
-  .reservation-datetime {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 6px;
-    margin-top: 10px;
-    border: 1px solid #e0e0e0;
-    font-size: 0.95rem;
-  }
-  
-  .reservation-datetime p {
-    margin: 0;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .reservation-datetime strong {
-    color: #444;
-  }
-  
+.ReservationsContainer {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+#h1 {
+  margin-top: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Reservation List */
+.reservation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Reservation Card */
+.reservation-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reservation-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.reservation-card p {
+  margin: 5px 0;
+}
+
+.reservation-card strong {
+  color: #555;
+}
+
+/* Date and Time Section */
+.reservation-datetime {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  border: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+}
+
+.reservation-datetime p {
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.reservation-datetime strong {
+  color: #444;
+}
