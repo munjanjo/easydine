@@ -1,17 +1,18 @@
 /* Main Container */
 .ReservationsContainer {
   max-width: 500px;
-  margin: 50px auto;
+  margin: 40px auto;
   padding: 20px;
   font-family: Arial, sans-serif;
   color: #333;
 }
 
-#h1 {
-  margin-top: 15px;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #444;
+h1 {
+  display: flex;
+  justify-content: center;
+  margin: 80px 0px;
+  font-size: 35px;
+  font-family: "Times New Roman", Times, serif;
 }
 
 /* Reservation List */
@@ -29,6 +30,30 @@
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 310px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
+.about-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 600px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
 }
 
 .reservation-card:hover {

@@ -32,7 +32,7 @@ export default function LoginPage() {
           setSuccessMessage("Logged in successfully!"); // Set success message
           setTimeout(() => {
             navigate("/home"); // Navigate after a short delay
-          }, 2000); // Optional delay to allow the user to see the message
+          }, 1500); // Optional delay to allow the user to see the message
         } else {
           console.error("Unexpected response format:", res.data);
           alert(res.data.Error || "An unknown error occurred.");

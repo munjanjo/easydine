@@ -7,6 +7,7 @@ export default function Contact() {
       <div className="container">
         <h1>Contact us</h1>
       </div>
+      <div className="card">Email us at: easydine@gmail.com</div>
     </>
   );
 }

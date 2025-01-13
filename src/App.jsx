@@ -7,6 +7,7 @@ import SignUpPage from "./signUp";
 import ReservationsPage from "./reservationsPage";
 import Contact from "./contact";
 import About from "./about";
+import Profile from "./profile";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/menu" element={<MenuPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </>

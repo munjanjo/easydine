@@ -8,20 +8,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.5); /* Transparentna pozadina */
-  backdrop-filter: blur(10px); /* Zamagljivanje */
-  -webkit-backdrop-filter: blur(10px); /* Podrška za Webkit preglednike */
-  border-bottom: 1px solid rgba(200, 200, 200, 0.5); /* Blago istaknuta donja granica */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Blaga sjena */
+  background: rgba(255, 255, 255, 0.5); /* Transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Webkit support */
+  border-bottom: 1px solid rgba(200, 200, 200, 0.5); /* Subtle border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   box-sizing: border-box;
-  border-radius: 5px; /* Lagano zaobljeni uglovi */
-  padding: 8px 10px; /* Unutarnji razmak */
+  border-radius: 5px; /* Slightly rounded corners */
+  padding: 8px 10px; /* Inner spacing */
+}
+
+#logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }
 
 .navbar-logo {
   font-size: 24px;
   font-weight: bold;
-  color: #2d2c2c; /* Tamna boja loga */
+  color: #2d2c2c; /* Dark logo color */
 }
 
 .navbar-links {
@@ -30,22 +36,67 @@
 }
 
 .navbar-link {
+  display: flex;
   text-decoration: none;
   font-size: 16px;
-  color: black; /* Boja teksta linkova */
+  color: black; /* Text color for links */
   padding: 10px 15px;
-  border-radius: 5px; /* Zaobljeni uglovi za hover efekt */
-  transition: all 0.3s ease; /* Glatka tranzicija */
+  border-radius: 5px; /* Rounded corners for hover effect */
+  transition: all 0.3s ease; /* Smooth transition */
 }
 
 .navbar-link:hover {
   cursor: pointer;
-  background-color: #f0f0f0; /* Boja pozadine prilikom hovera */
-  color: #000000; /* Crna boja teksta */
-  text-decoration:underline;
+  background-color: #f0f0f0; /* Background color on hover */
+  color: #000000; /* Black text color */
+  text-decoration: underline;
 }
 
 .navbar-link:active {
-  background-color: #e0e0e0; /* Blago tamnija pozadina */
-  transform: scale(0.95); /* Efekt pritiska */
+  background-color: #e0e0e0; /* Slightly darker background */
+  transform: scale(0.95); /* Press effect */
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px); /* Positioned below navbar */
+  right: 10px;
+  background: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+  backdrop-filter: blur(5px); /* Subtle blur for the dropdown */
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(200, 200, 200, 0.5); /* Subtle border */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Dropdown shadow */
+  padding: 8px 0; /* Vertical spacing */
+  z-index: 1000;
+  min-width: 150px; /* Minimum width for the dropdown */
+}
+
+/* Dropdown Menu Item */
+.dropdown-item {
+  padding: 10px 15px; /* Spacing inside each item */
+  font-size: 14px; /* Slightly smaller font size */
+  color: #2d2c2c; /* Darker text color */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth hover transition */
+  text-align: left; /* Align text to the left */
+}
+
+.dropdown-item:hover {
+  background-color: #f7f7f7; /* Subtle background color on hover */
+  color: #000000; /* Darker text color */
+}
+
+/* Border between dropdown items */
+.dropdown-item:not(:last-child) {
+  border-bottom: 1px solid rgba(200, 200, 200, 0.5); /* Separator for items */
+}
+
+/* Optional: Add responsive dropdown adjustments */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    right: 0; /* Align dropdown to the edge for small screens */
+    min-width: 100%; /* Make it span full width */
+  }
 }
