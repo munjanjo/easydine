@@ -70,8 +70,9 @@ app.post("/login", (req, res) => {
 
 app.post("/reserve", (req, res) => {
   const sql =
-    "INSERT INTO reservations (`name`, `surname`, `email`, `phone_number`, `number_of_people`, `preorder`, `date`, `table`) VALUES (?)";
+    "INSERT INTO reservations (`restaurant`,`name`, `surname`, `email`, `phone_number`, `number_of_people`, `preorder`, `date`, `table`) VALUES (?)";
   const values = [
+    req.body.restaurant,
     req.body.name,
     req.body.surname,
     req.body.email,

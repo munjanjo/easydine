@@ -4,9 +4,23 @@ import restaurant2 from "./assets/mandrach.webp";
 import restaurant3 from "./assets/dolis.jpeg";
 import "../styles/home.css";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
 export default function Home() {
+  const [values, setValues] = useState({
+    restaurant: "",
+  });
   const navigate = useNavigate();
+  function submit(event) {
+    event.preventDefault();
+    axios
+      .post("http://localhost:8081/reserve", values)
+      .then((res) => {
+        navigate("/form");
+      })
+      .catch((err) => console.log(err));
+  }
   return (
     <>
       <Navbar />
@@ -17,7 +31,11 @@ export default function Home() {
           <img
             src={restaurant1}
             className="image"
-            onClick={() => navigate("/form")}
+            onClick={() => {
+              setValues({ restaurant: "Lucica" });
+              navigate("/form");
+              (e) => submit(e);
+            }}
           />
         </div>
         <div className="container-image">
@@ -25,7 +43,10 @@ export default function Home() {
           <img
             src={restaurant2}
             className="image"
-            onClick={() => navigate("/form")}
+            onClick={() => {
+              setValues({ restaurant: "Mandrach" });
+              navigate("/form");
+            }}
           />
         </div>
         <div className="container-image">
@@ -33,7 +54,10 @@ export default function Home() {
           <img
             src={restaurant3}
             className="image"
-            onClick={() => navigate("/form")}
+            onClick={() => {
+              setValues({ restaurant: "Dolis" });
+              navigate("/form");
+            }}
           />
         </div>
         <div className="container-image">
@@ -41,7 +65,10 @@ export default function Home() {
           <img
             src={restaurant3}
             className="image"
-            onClick={() => navigate("/form")}
+            onClick={() => {
+              setValues({ restaurant: "Dolis" });
+              navigate("/form");
+            }}
           />
         </div>
         <div className="container-image">
@@ -49,7 +76,10 @@ export default function Home() {
           <img
             src={restaurant3}
             className="image"
-            onClick={() => navigate("/form")}
+            onClick={() => {
+              setValues({ restaurant: "Dolis" });
+              navigate("/form");
+            }}
           />
         </div>
         <div className="container-image">
@@ -57,7 +87,10 @@ export default function Home() {
           <img
             src={restaurant3}
             className="image"
-            onClick={() => navigate("/form")}
+            onClick={() => {
+              setValues({ restaurant: "Dolis" });
+              navigate("/form");
+            }}
           />
         </div>
         <div className="container-image">
@@ -65,7 +98,10 @@ export default function Home() {
           <img
             src={restaurant3}
             className="image"
-            onClick={() => navigate("/form")}
+            onClick={() => {
+              setValues({ restaurant: "Dolis" });
+              navigate("/form");
+            }}
           />
         </div>
         <div className="container-image">
@@ -73,7 +109,10 @@ export default function Home() {
           <img
             src={restaurant3}
             className="image"
-            onClick={() => navigate("/form")}
+            onClick={() => {
+              setValues({ restaurant: "Dolis" });
+              navigate("/form");
+            }}
           />
         </div>
       </div>
