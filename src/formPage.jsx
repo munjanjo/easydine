@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 export default function FormPage() {
   const [step, setStep] = useState(1);
   const [values, setValues] = useState({
+    restaurant: localStorage.getItem("activeRestaurant"),
     date: null,
     time: null,
     table: "",

@@ -1,10 +1,18 @@
 import "../styles/menuPage.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "./navbar";
+import backArrow from "./assets/backArrow.png";
+
 export default function MenuPage() {
+  const navigate = useNavigate();
   return (
     <>
       <Navbar />
+      <img
+        src={backArrow}
+        className="backArrow"
+        onClick={() => navigate("/home")}
+      />
       <h1>Menu:</h1>
       <div className="menu">
         <h3>Predjela</h3>
@@ -25,6 +33,9 @@ export default function MenuPage() {
           <li>Madarica 10€</li>
           <li>Krempita 10€</li>
         </ul>
+        <button className="book" onClick={() => navigate("/form")}>
+          Book a table!
+        </button>
       </div>
     </>
   );

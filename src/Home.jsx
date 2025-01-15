@@ -8,19 +8,8 @@ import { useState } from "react";
 import axios from "axios";
 
 export default function Home() {
-  const [values, setValues] = useState({
-    restaurant: "",
-  });
   const navigate = useNavigate();
-  function submit(event) {
-    event.preventDefault();
-    axios
-      .post("http://localhost:8081/reserve", values)
-      .then((res) => {
-        navigate("/form");
-      })
-      .catch((err) => console.log(err));
-  }
+
   return (
     <>
       <Navbar />
@@ -32,9 +21,8 @@ export default function Home() {
             src={restaurant1}
             className="image"
             onClick={() => {
-              setValues({ restaurant: "Lucica" });
-              navigate("/form");
-              (e) => submit(e);
+              localStorage.setItem("activeRestaurant", "Lucica");
+              navigate("/menu");
             }}
           />
         </div>
@@ -44,8 +32,41 @@ export default function Home() {
             src={restaurant2}
             className="image"
             onClick={() => {
-              setValues({ restaurant: "Mandrach" });
-              navigate("/form");
+              localStorage.setItem("activeRestaurant", "Mandrach");
+              navigate("/menu");
+            }}
+          />
+        </div>
+        <div className="container-image">
+          <p>Restoran Dolis</p>
+          <img
+            src={restaurant3}
+            className="image"
+            onClick={() => {
+              localStorage.setItem("activeRestaurant", "Dolis");
+              navigate("/menu");
+            }}
+          />
+        </div>
+        <div className="container-image">
+          <p>Restoran Dolis</p>
+          <img
+            src={restaurant3}
+            className="image"
+            onClick={() => {
+              localStorage.setItem("activeRestaurant", "Dolis");
+              navigate("/menu");
+            }}
+          />
+        </div>
+        <div className="container-image">
+          <p>Restoran Dolis</p>
+          <img
+            src={restaurant3}
+            className="image"
+            onClick={() => {
+              localStorage.setItem("activeRestaurant", "Dolis");
+              navigate("/menu");
             }}
           />
         </div>
@@ -56,7 +77,8 @@ export default function Home() {
             className="image"
             onClick={() => {
               setValues({ restaurant: "Dolis" });
-              navigate("/form");
+              localStorage.setItem("activeRestaurant", "Dolis");
+              navigate("/menu");
             }}
           />
         </div>
@@ -67,7 +89,8 @@ export default function Home() {
             className="image"
             onClick={() => {
               setValues({ restaurant: "Dolis" });
-              navigate("/form");
+              localStorage.setItem("activeRestaurant", "Dolis");
+              navigate("/menu");
             }}
           />
         </div>
@@ -77,41 +100,8 @@ export default function Home() {
             src={restaurant3}
             className="image"
             onClick={() => {
-              setValues({ restaurant: "Dolis" });
-              navigate("/form");
-            }}
-          />
-        </div>
-        <div className="container-image">
-          <p>Restoran Dolis</p>
-          <img
-            src={restaurant3}
-            className="image"
-            onClick={() => {
-              setValues({ restaurant: "Dolis" });
-              navigate("/form");
-            }}
-          />
-        </div>
-        <div className="container-image">
-          <p>Restoran Dolis</p>
-          <img
-            src={restaurant3}
-            className="image"
-            onClick={() => {
-              setValues({ restaurant: "Dolis" });
-              navigate("/form");
-            }}
-          />
-        </div>
-        <div className="container-image">
-          <p>Restoran Dolis</p>
-          <img
-            src={restaurant3}
-            className="image"
-            onClick={() => {
-              setValues({ restaurant: "Dolis" });
-              navigate("/form");
+              localStorage.setItem("activeRestaurant", "Dolis");
+              navigate("/menu");
             }}
           />
         </div>

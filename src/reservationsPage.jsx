@@ -28,6 +28,20 @@ export default function ReservationsPage() {
     });
     return `${formattedDate} at ${formattedTime}`;
   };
+  const cancelReservation = (id) => {
+    axios
+      .delete(`http://localhost:8081/reservations/${id}`)
+      .then((res) => {
+        alert("Reservation cancelled successfully");
+        setReservations((prev) =>
+          prev.filter((reservation) => reservation.id !== id)
+        );
+      })
+      .catch((err) => {
+        console.error("Error cancelling reservation:", err.message);
+        alert("Failed to cancel reservation. Please try again.");
+      });
+  };
 
   return (
     <>
@@ -48,6 +62,12 @@ export default function ReservationsPage() {
                   <strong>Date:</strong> {formatDateTime(res.date)}
                 </p>
               </div>
+              <button
+                className="cancelReservation"
+                onClick={() => cancelReservation(res.id)}
+              >
+                Cancel
+              </button>
             </div>
           ))}
         </div>

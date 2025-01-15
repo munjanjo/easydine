@@ -12,3 +12,27 @@
   align-items: center;
   font-size: 20px;
 }
+.backArrow {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  width: 55px;
+  height: auto; /* Maintain aspect ratio */
+}
+.backArrow:hover {
+  cursor: pointer;
+}
+.book {
+  background-color: rgb(72, 72, 243);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  border: 1px solid black;
+  font-size: 16px;
+}
+.book:hover {
+  cursor: pointer;
+  background-color: rgb(56, 56, 241);
+  transition: 0.2s ease-in-out, box-shadow 0.2s ease;
+}

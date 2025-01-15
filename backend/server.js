@@ -70,9 +70,8 @@ app.post("/login", (req, res) => {
 
 app.post("/reserve", (req, res) => {
   const sql =
-    "INSERT INTO reservations (`restaurant`,`name`, `surname`, `email`, `phone_number`, `number_of_people`, `preorder`, `date`, `table`) VALUES (?)";
+    "INSERT INTO reservations (`name`, `surname`, `email`, `phone_number`, `number_of_people`, `preorder`, `date`, `table`,`restaurant`) VALUES (?)";
   const values = [
-    req.body.restaurant,
     req.body.name,
     req.body.surname,
     req.body.email,
@@ -81,6 +80,7 @@ app.post("/reserve", (req, res) => {
     req.body.preorder,
     `${req.body.date} ${req.body.time}`,
     req.body.table,
+    req.body.restaurant,
   ];
   db.query(sql, [values], (err, result) => {
     if (err) {
@@ -109,6 +109,23 @@ app.get("/reservations", (req, res) => {
       return res.status(500).json({ error: "Database error" });
     }
     return res.status(200).json({ message: "Reservations", result });
+  });
+});
+app.delete("/reservations/:id", (req, res) => {
+  const reservationId = req.params.id;
+
+  const sql = "DELETE FROM reservations WHERE id = ?";
+  db.query(sql, [reservationId], (err, result) => {
+    if (err) {
+      console.error("SQL Query Error:", err.message);
+      return res.status(500).json({ error: "Database error" });
+    }
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "Reservation not found" });
+    }
+    return res
+      .status(200)
+      .json({ message: "Reservation cancelled successfully" });
   });
 });
 
