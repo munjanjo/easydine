@@ -52,6 +52,9 @@ export default function ReservationsPage() {
           {reservations.map((res, index) => (
             <div className="reservation-card" key={index}>
               <p>
+                <strong>Restaurant:</strong> {res.restaurant}
+              </p>
+              <p>
                 <strong>Name:</strong> {res.name}
               </p>
               <p>
