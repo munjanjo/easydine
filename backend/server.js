@@ -128,6 +128,44 @@ app.delete("/reservations/:id", (req, res) => {
       .json({ message: "Reservation cancelled successfully" });
   });
 });
+app.put("/information/:id", (req, res) => {
+  const reservationId = req.params.id;
+  const { name, surname, phone_number, password } = req.body;
+
+  let sql =
+    "UPDATE reservations SET name = ?, surname = ?, phone_number = ? WHERE id = ?";
+  const values = [name, surname, phone_number, reservationId];
+
+  // If a new password is provided, hash it and update the users table
+  if (password) {
+    bcrypt.hash(password.toString(), salt, (err, hash) => {
+      if (err) {
+        console.error("Bcrypt error:", err.message);
+        return res.status(500).json({ error: "Internal server error" });
+      }
+
+      // Add the password update query
+      const updatePasswordSql =
+        "UPDATE users SET password = ? WHERE email = (SELECT email FROM reservations WHERE id = ?)";
+      db.query(updatePasswordSql, [hash, reservationId], (err) => {
+        if (err) {
+          console.error("SQL Query Error:", err.message);
+          return res.status(500).json({ error: "Database error" });
+        }
+      });
+    });
+  }
+
+  db.query(sql, values, (err, result) => {
+    if (err) {
+      console.error("SQL Query Error:", err.message);
+      return res.status(500).json({ error: "Database error" });
+    }
+    return res
+      .status(200)
+      .json({ message: "Reservation updated successfully" });
+  });
+});
 
 app.listen(8081, () => {
   console.log("listening");

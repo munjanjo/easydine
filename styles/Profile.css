@@ -2,17 +2,32 @@
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   margin: 60px auto;
-  max-width: 250px;
-  padding: 0 20px;
+  max-width: 400px;
+  padding: 20px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
   gap: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
-input {
-  width: 100%;
-  padding: 10px;
+.profileInput {
+  width: 300px;
+  padding: 15px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  font-size: 14px;
+}
+.confirm {
+  background-color: rgb(72, 72, 243);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 16px;
+}
+.confirm:hover {
+  cursor: pointer;
+  background-color: rgb(56, 56, 241);
+  transition: 0.2s ease-in-out, box-shadow 0.2s ease;
 }
