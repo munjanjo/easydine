@@ -8,13 +8,23 @@ export default function ReservationsPage() {
 
   useEffect(() => {
     const userEmail = localStorage.getItem("activeEmail");
-    console.log(userEmail);
+    if (!userEmail) {
+      console.error("No active email found in localStorage");
+      return;
+    }
+
     axios
       .get(`http://localhost:8081/reservations?email=${userEmail}`)
       .then((res) => {
-        setReservations(res.data.result);
+        if (res.data && res.data.result) {
+          setReservations(res.data.result);
+        } else {
+          console.warn("No reservations found for this email");
+        }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.error("Error fetching reservations:", err.message);
+      });
   }, []);
 
   const formatDateTime = (isoString) => {
@@ -28,7 +38,13 @@ export default function ReservationsPage() {
     });
     return `${formattedDate} at ${formattedTime}`;
   };
+
   const cancelReservation = (id) => {
+    if (!id) {
+      alert("Reservation ID is missing!");
+      return;
+    }
+
     axios
       .delete(`http://localhost:8081/reservations/${id}`)
       .then((res) => {
@@ -49,30 +65,34 @@ export default function ReservationsPage() {
       <div className="ReservationsContainer">
         <h1 id="h1">Your Reservations</h1>
         <div className="reservation-list">
-          {reservations.map((res, index) => (
-            <div className="reservation-card" key={index}>
-              <p>
-                <strong>Restaurant:</strong> {res.restaurant}
-              </p>
-              <p>
-                <strong>Name:</strong> {res.name}
-              </p>
-              <p>
-                <strong>Surname:</strong> {res.surname}
-              </p>
-              <div className="reservation-datetime">
+          {reservations.length === 0 ? (
+            <p>No reservations available</p>
+          ) : (
+            reservations.map((res, index) => (
+              <div className="reservation-card" key={index}>
                 <p>
-                  <strong>Date:</strong> {formatDateTime(res.date)}
+                  <strong>Restaurant:</strong> {res.restaurant}
                 </p>
+                <p>
+                  <strong>Name:</strong> {res.name}
+                </p>
+                <p>
+                  <strong>Surname:</strong> {res.surname}
+                </p>
+                <div className="reservation-datetime">
+                  <p>
+                    <strong>Date:</strong> {formatDateTime(res.date)}
+                  </p>
+                </div>
+                <button
+                  className="cancelReservation"
+                  onClick={() => cancelReservation(res.id)}
+                >
+                  Cancel
+                </button>
               </div>
-              <button
-                className="cancelReservation"
-                onClick={() => cancelReservation(res.id)}
-              >
-                Cancel
-              </button>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
     </>

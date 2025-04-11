@@ -9,7 +9,7 @@ export default function Profile() {
   useEffect(() => {
     const userEmail = localStorage.getItem("activeEmail");
     axios
-      .get(`http://localhost:8081/reservations?email=${userEmail}`)
+      .get(`http://localhost:8081/users?email=${userEmail}`)
       .then((res) => {
         setReservations(res.data.result);
       })
@@ -43,18 +43,6 @@ export default function Profile() {
             type="text"
             defaultValue={res.name}
             onChange={(e) => (res.name = e.target.value)}
-          />
-          <input
-            className="profileInput"
-            type="text"
-            defaultValue={res.surname}
-            onChange={(e) => (res.surname = e.target.value)}
-          />
-          <input
-            className="profileInput"
-            type="text"
-            defaultValue={res.phone_number}
-            onChange={(e) => (res.phone_number = e.target.value)}
           />
           <input
             className="profileInput"

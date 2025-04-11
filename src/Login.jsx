@@ -93,7 +93,7 @@ export default function LoginPage() {
               <span onClick={() => navigate("/signup")}> create one!</span>
             </div>
           </div>
-          <div className="sumbit-conteiner">
+          <div className="submit-container">
             <button type="submit" className="submit">
               Login
             </button>
