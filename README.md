@@ -1,8 +1,55 @@
-# React + Vite
+# 🍽️ EasyDine
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+EasyDine je moderna web aplikacija za pregled restorana i jednostavno online rezerviranje stolova.  
+Kroz elegantno i intuitivno sučelje korisnici mogu pregledavati restorane, vidjeti jelovnik, odabrati datum, vrijeme i stol te ispuniti podatke za rezervaciju.
 
-Currently, two official plugins are available:
+Aplikacija je razvijena u **Reactu (Vite)** uz korištenje modernog dizajna, jednostavne navigacije i glatkog korisničkog iskustva.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+## 📸 Screenshots
+
+### 🔐 **Login stranica**
+![Login](./screenshots/login.png)
+
+### 🏘️ **Pregled restorana**
+![Restaurants](./screenshots/restaurants.png)
+
+### 📋 **Jelovnik odabranog restorana**
+![Menu](./screenshots/menu.png)
+
+### 🕒 **Odabir datuma, vremena i stola**
+![Select Table](./screenshots/select-table.png)
+
+### 🧾 **Forma za unos podataka**
+![Form](./screenshots/details-form.png)
+
+### ✅ **Pregled i potvrda rezervacija**
+![Reservations](./screenshots/reservations.png)
+
+---
+
+## ✨ Features
+
+- 🔐 **Login sustav**  
+- 🏠 **Pregled svih dostupnih restorana**
+- 📋 **Prikaz jelovnika po kategorijama**
+- 📅 **Odabir datuma i vremena**
+- 🍽️ **Odabir dostupnog stola**
+- 📝 **Unos osobnih podataka i obroka unaprijed**
+- ✔️ **Prikaz potvrđenih rezervacija**
+- ❌ **Otkazivanje rezervacije**
+- 🎨 **Moderan, hotelski UI dizajn s blur efektima**
+- 📱 **Potpuno responzivan dizajn**
+
+---
+
+## 🛠️ Tech Stack
+
+- **React (Vite)**
+- **JavaScript / JSX**
+- **CSS** (custom styling)
+- **React Router** za navigaciju
+- **Local state management (useState, props)**
+
+
